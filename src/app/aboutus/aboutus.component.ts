@@ -56,6 +56,8 @@ export class AboutusComponent implements OnInit {
   }
   ngOnInit() {
     this.productId = this.route.snapshot.params['productId'];
+    // to add a dynamic component on load
+    this.createComponent('home');
   }
   onKeySearch() {
    this.shopingService.SearchItemByKeyWord(this.productName);
