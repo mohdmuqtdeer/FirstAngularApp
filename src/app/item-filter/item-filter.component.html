@@ -1,0 +1,6 @@
+<fieldset style="width: 200px">
+<legend> Filter Item:</legend>
+<label class="containerChekBox" *ngFor="let item of items; let i = index" >{{item}}
+    <input (change)="onCheckBoxSelection(item,$event)"   type="checkbox" value="{{item}}"><span class="checkmark"></span>
+</label>
+</fieldset>

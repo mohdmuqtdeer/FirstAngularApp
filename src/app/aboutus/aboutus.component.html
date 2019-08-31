@@ -1,0 +1,30 @@
+<div>
+<div>Search by product name</div>
+<div>
+  <input type="text" [(ngModel)]="firstname" id="firstname" name="firstname"  placeholder="product name" >
+</div>
+
+<div>
+  ProductId From Url
+</div>
+<div>
+  {{productId}}
+</div>
+
+<!---------Step 7  to load dynamic component------------->
+<div>
+<input type="button" (click)="createComponent('home')" value="Shop more">
+<input type="button" (click)="createComponent('contact')" value="My cart">
+</div>
+<div style="text-align:center">
+    <h1>
+        Welcome to {{ title }}!
+    </h1>
+    <template #messagecontainer>
+    </template>
+</div>
+<!------------------End here to load dynamic component--------------------->
+</div>
+
+
+

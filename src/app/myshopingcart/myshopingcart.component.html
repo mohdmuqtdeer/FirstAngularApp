@@ -1,0 +1,26 @@
+
+<div class="col-25">
+    <div class="container">
+        <input type="button" *ngIf="cartItems.length!=0" class="btnClear" (click)="ClearCart()" value="Clear Cart">
+        <h2 *ngIf="cartItems.length==0">Your cart is empty!</h2>
+      <h4>Cart Item <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>{{cartItems.length}}</b></span></h4>
+      <div  class="divMainCart" *ngFor="let item of cartItems; let i = index">
+          <hr>
+        <div class="divLeftCart">
+            <p><a routerLink="/productdetail/{{item}}">{{item}}</a><a (click)="RemoveItem(item)" style="margin-left: 25px;color: red">X</a></p>
+        </div>
+        <div class="divMiddleCart">
+          <input class="itemQuanity" value="1" type="text">
+        </div>
+        <div class="divRightCart">
+            <span class="price">$15</span>
+        </div>
+      </div>
+      <div class="divMainCart">
+        <hr>
+        <p>Total <span class="price" style="color:black"><b>{{TotalAmount}}</b></span></p>
+        <input  *ngIf="cartItems.length!=0" type="button" class="btn" routerLink="/checkoutitems" value="Check out">
+      </div>
+    </div>
+</div>
+
