@@ -17,9 +17,8 @@ stateName: string;
 // step3
 import { HomepageComponent } from '../homepage/homepage.component';
 import { MyshopingcartComponent } from '../myshopingcart/myshopingcart.component';
-
-
-
+// shoping cart data service provider
+import {ShopingCartService} from '../shoping-cart.service';
 import { containsTree } from '@angular/router/src/url_tree';
 @Component({
   selector: 'app-aboutus',
@@ -29,7 +28,7 @@ import { containsTree } from '@angular/router/src/url_tree';
 
 
 export class AboutusComponent implements OnInit {
-
+  productName;
   ddlState: Array<StateList> = [];
   stateName: string;
   rdoselecteditem: string;
@@ -40,7 +39,7 @@ export class AboutusComponent implements OnInit {
   componentRef: any;
   @ViewChild('messagecontainer', { read: ViewContainerRef }) entry: ViewContainerRef;
   // step5 add some parameter in construture to intiatlize the property
-  constructor(private route: ActivatedRoute, private resolver: ComponentFactoryResolver) {
+  constructor(private route: ActivatedRoute, private resolver: ComponentFactoryResolver, private shopingService: ShopingCartService) {
     this.ddlState.push({id: 1 , stateName: 'UP' });
     this.ddlState.push({id: 2 , stateName: 'Punjab' });
   }
@@ -57,6 +56,9 @@ export class AboutusComponent implements OnInit {
   }
   ngOnInit() {
     this.productId = this.route.snapshot.params['productId'];
+  }
+  onKeySearch() {
+   this.shopingService.SearchItemByKeyWord(this.productName);
   }
   // step6
   createComponent(componentName) {

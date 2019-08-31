@@ -26,7 +26,7 @@ AddItem(item) {
   if (this.cartItem.indexOf(item) === -1) {
     this.cartItem.push(item);
   } else {
-    alert('Item already added cart');
+    alert('Item already added in cart');
  }
 }
 GetCartItems() {
@@ -42,7 +42,7 @@ DeleteItem(itemId) {
   return this.cartItem;
 }
 GetItems() {
-  if ( this.filterItems.length === 0) {
+  if ( this.filterItems.length === 0 ) {
    this.filterItems = this.items;
   }
   return  this.filterItems;
@@ -58,8 +58,20 @@ GetMultiOptionFilter(filterText) {
  } else {
    this.filterItems = this.items;
  }
-  this.GetItems();
+  // this.GetItems();
 }
+SearchItemByKeyWord(searchKey) {
+  if (searchKey.length > 0) {
+    this.filterItems = this.items.filter(item => {
+         return item.toLowerCase().indexOf(searchKey.toLowerCase()) > - 1;
+    });
+  } else {
+    this.filterItems = this.items;
+  }
+
+// this.GetItems();
+}
+
 ClearCart() {
 this.cartItem = [];
 return this.cartItem;
