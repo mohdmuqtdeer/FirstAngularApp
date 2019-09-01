@@ -9,6 +9,7 @@ import {ProductDetailComponent} from './product-detail/product-detail.component'
 import {ItemFilterComponent} from './item-filter/item-filter.component';
 import {CheckoutitemsComponent} from './checkoutitems/checkoutitems.component';
 import { MyshopingcartComponent} from './myshopingcart/myshopingcart.component';
+import { PricerangesliderComponent } from './pricerangeslider/pricerangeslider.component';
 const routes: Routes = [
   {path : '', component : HomepageComponent},
   {path: 'homepage', component: HomepageComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'productdetail/:productId', component: ProductDetailComponent},
   {path: 'itemfilter', component : ItemFilterComponent},
   {path: 'checkoutitems', component: CheckoutitemsComponent},
+  {path: 'pricerangeslider', component: PricerangesliderComponent},
   {path: '**', component: PagenotfoundComponent}
 ];
 

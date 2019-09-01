@@ -28,5 +28,4 @@ export class ItemFilterComponent implements OnInit {
   GetItems() {
     this.items = this.shopingCart.GetFilterTag();
  }
-
 }

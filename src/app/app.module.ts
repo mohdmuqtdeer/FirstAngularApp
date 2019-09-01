@@ -13,6 +13,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ItemFilterComponent } from './item-filter/item-filter.component';
 import { CheckoutitemsComponent } from './checkoutitems/checkoutitems.component';
 import { MyshopingcartComponent } from './myshopingcart/myshopingcart.component';
+import { PricerangesliderComponent } from './pricerangeslider/pricerangeslider.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MyshopingcartComponent } from './myshopingcart/myshopingcart.component'
     ProductDetailComponent,
     ItemFilterComponent,
     CheckoutitemsComponent,
-    MyshopingcartComponent
+    MyshopingcartComponent,
+    PricerangesliderComponent
   ],
   imports: [
     BrowserModule,
