@@ -12,7 +12,7 @@ export class PricerangesliderComponent implements OnInit {
 
   ngOnInit() {
   }
-  onPriceRangeChannge(event) {
+  onPriceRangeChannge() {
          this.shopingCartServices.PriceFilter(this.priceRange);
   }
 
